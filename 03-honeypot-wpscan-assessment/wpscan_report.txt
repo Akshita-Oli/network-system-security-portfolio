@@ -1,0 +1,208 @@
+_______________________________________________________________
+         __          _______   _____
+         \ \        / /  __ \ / ____|
+          \ \  /\  / /| |__) | (___   ___  __ _ _ __ ®
+           \ \/  \/ / |  ___/ \___ \ / __|/ _` | '_ \
+            \  /\  /  | |     ____) | (__| (_| | | | |
+             \/  \/   |_|    |_____/ \___|\__,_|_| |_|
+
+         WordPress Security Scanner by the WPScan Team
+                         Version 3.8.28
+       Sponsored by Automattic - https://automattic.com/
+       @_WPScan_, @ethicalhack3r, @erwan_lr, @firefart
+_______________________________________________________________
+
+[+] URL: http://www.honeypot.com/wordpress/ [192.168.100.5]
+[+] Started: Sun Dec 21 10:18:05 2025
+
+Interesting Finding(s):
+
+[+] Headers
+ | Interesting Entry: Server: Apache/2.4.58 (Ubuntu)
+ | Found By: Headers (Passive Detection)
+ | Confidence: 100%
+
+[+] XML-RPC seems to be enabled: http://www.honeypot.com/wordpress/xmlrpc.php
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 100%
+ | References:
+ |  - http://codex.wordpress.org/XML-RPC_Pingback_API
+ |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_ghost_scanner/
+ |  - https://www.rapid7.com/db/modules/auxiliary/dos/http/wordpress_xmlrpc_dos/
+ |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_xmlrpc_login/
+ |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_pingback_access/
+
+[+] WordPress readme found: http://www.honeypot.com/wordpress/readme.html
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 100%
+
+[+] The external WP-Cron seems to be enabled: http://www.honeypot.com/wordpress/wp-cron.php
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 60%
+ | References:
+ |  - https://www.iplocation.net/defend-wordpress-from-ddos
+ |  - https://github.com/wpscanteam/wpscan/issues/1299
+
+[+] WordPress version 6.5 identified (Insecure, released on 2024-04-02).
+ | Found By: Rss Generator (Passive Detection)
+ |  - http://www.honeypot.com/wordpress/?feed=rss2, <generator>https://wordpress.org/?v=6.5</generator>
+ |  - http://www.honeypot.com/wordpress/?feed=comments-rss2, <generator>https://wordpress.org/?v=6.5</generator>
+ |
+ | [!] 6 vulnerabilities identified:
+ |
+ | [!] Title: WP < 6.5.2 - Unauthenticated Stored XSS
+ |     Fixed in: 6.5.2
+ |     References:
+ |      - https://wpscan.com/vulnerability/1a5c5df1-57ee-4190-a336-b0266962078f
+ |      - https://wordpress.org/news/2024/04/wordpress-6-5-2-maintenance-and-security-release/
+ |
+ | [!] Title: WordPress < 6.5.5 - Contributor+ Stored XSS in HTML API
+ |     Fixed in: 6.5.5
+ |     References:
+ |      - https://wpscan.com/vulnerability/2c63f136-4c1f-4093-9a8c-5e51f19eae28
+ |      - https://wordpress.org/news/2024/06/wordpress-6-5-5/
+ |
+ | [!] Title: WordPress < 6.5.5 - Contributor+ Stored XSS in Template-Part Block
+ |     Fixed in: 6.5.5
+ |     References:
+ |      - https://wpscan.com/vulnerability/7c448f6d-4531-4757-bff0-be9e3220bbbb
+ |      - https://wordpress.org/news/2024/06/wordpress-6-5-5/
+ |
+ | [!] Title: WordPress < 6.5.5 - Contributor+ Path Traversal in Template-Part Block
+ |     Fixed in: 6.5.5
+ |     References:
+ |      - https://wpscan.com/vulnerability/36232787-754a-4234-83d6-6ded5e80251c
+ |      - https://wordpress.org/news/2024/06/wordpress-6-5-5/
+ |
+ | [!] Title: WP < 6.8.3 - Author+ DOM Stored XSS
+ |     Fixed in: 6.5.7
+ |     References:
+ |      - https://wpscan.com/vulnerability/c4616b57-770f-4c40-93f8-29571c80330a
+ |      - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-58674
+ |      - https://patchstack.com/database/wordpress/wordpress/wordpress/vulnerability/wordpress-wordpress-wordpress-6-8-2-cross-site-scripting-xss-vulnerability
+ |      -  https://wordpress.org/news/2025/09/wordpress-6-8-3-release/
+ |
+ | [!] Title: WP < 6.8.3 - Contributor+ Sensitive Data Disclosure
+ |     Fixed in: 6.5.7
+ |     References:
+ |      - https://wpscan.com/vulnerability/1e2dad30-dd95-4142-903b-4d5c580eaad2
+ |      - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-58246
+ |      - https://patchstack.com/database/wordpress/wordpress/wordpress/vulnerability/wordpress-wordpress-wordpress-6-8-2-sensitive-data-exposure-vulnerability
+ |      - https://wordpress.org/news/2025/09/wordpress-6-8-3-release/
+
+[+] WordPress theme in use: twentytwentyfour
+ | Location: http://www.honeypot.com/wordpress/wp-content/themes/twentytwentyfour/
+ | Last Updated: 2025-12-03T00:00:00.000Z
+ | Readme: http://www.honeypot.com/wordpress/wp-content/themes/twentytwentyfour/readme.txt
+ | [!] The version is out of date, the latest version is 1.4
+ | [!] Directory listing is enabled
+ | Style URL: http://www.honeypot.com/wordpress/wp-content/themes/twentytwentyfour/style.css
+ | Style Name: Twenty Twenty-Four
+ | Style URI: https://wordpress.org/themes/twentytwentyfour/
+ | Description: Twenty Twenty-Four is designed to be flexible, versatile and applicable to any website. Its collecti...
+ | Author: the WordPress team
+ | Author URI: https://wordpress.org
+ |
+ | Found By: Urls In Homepage (Passive Detection)
+ |
+ | Version: 1.1 (80% confidence)
+ | Found By: Style (Passive Detection)
+ |  - http://www.honeypot.com/wordpress/wp-content/themes/twentytwentyfour/style.css, Match: 'Version: 1.1'
+
+
+[i] No plugins Found.
+
+
+[i] Theme(s) Identified:
+
+[+] twentytwentyfour
+ | Location: http://www.honeypot.com/wordpress/wp-content/themes/twentytwentyfour/
+ | Last Updated: 2025-12-03T00:00:00.000Z
+ | Readme: http://www.honeypot.com/wordpress/wp-content/themes/twentytwentyfour/readme.txt
+ | [!] The version is out of date, the latest version is 1.4
+ | [!] Directory listing is enabled
+ | Style URL: http://www.honeypot.com/wordpress/wp-content/themes/twentytwentyfour/style.css
+ | Style Name: Twenty Twenty-Four
+ | Style URI: https://wordpress.org/themes/twentytwentyfour/
+ | Description: Twenty Twenty-Four is designed to be flexible, versatile and applicable to any website. Its collecti...
+ | Author: the WordPress team
+ | Author URI: https://wordpress.org
+ |
+ | Found By: Urls In Homepage (Passive Detection)
+ | Confirmed By: Known Locations (Aggressive Detection)
+ |  - http://www.honeypot.com/wordpress/wp-content/themes/twentytwentyfour/, status: 200
+ |
+ | Version: 1.1 (80% confidence)
+ | Found By: Style (Passive Detection)
+ |  - http://www.honeypot.com/wordpress/wp-content/themes/twentytwentyfour/style.css, Match: 'Version: 1.1'
+
+[+] twentytwentythree
+ | Location: http://www.honeypot.com/wordpress/wp-content/themes/twentytwentythree/
+ | Last Updated: 2024-11-13T00:00:00.000Z
+ | Readme: http://www.honeypot.com/wordpress/wp-content/themes/twentytwentythree/readme.txt
+ | [!] The version is out of date, the latest version is 1.6
+ | [!] Directory listing is enabled
+ | Style URL: http://www.honeypot.com/wordpress/wp-content/themes/twentytwentythree/style.css
+ | Style Name: Twenty Twenty-Three
+ | Style URI: https://wordpress.org/themes/twentytwentythree
+ | Description: Twenty Twenty-Three is designed to take advantage of the new design tools introduced in WordPress 6....
+ | Author: the WordPress team
+ | Author URI: https://wordpress.org
+ |
+ | Found By: Known Locations (Aggressive Detection)
+ |  - http://www.honeypot.com/wordpress/wp-content/themes/twentytwentythree/, status: 200
+ |
+ | Version: 1.4 (80% confidence)
+ | Found By: Style (Passive Detection)
+ |  - http://www.honeypot.com/wordpress/wp-content/themes/twentytwentythree/style.css, Match: 'Version: 1.4'
+
+[+] twentytwentytwo
+ | Location: http://www.honeypot.com/wordpress/wp-content/themes/twentytwentytwo/
+ | Last Updated: 2025-12-03T00:00:00.000Z
+ | Readme: http://www.honeypot.com/wordpress/wp-content/themes/twentytwentytwo/readme.txt
+ | [!] The version is out of date, the latest version is 2.1
+ | Style URL: http://www.honeypot.com/wordpress/wp-content/themes/twentytwentytwo/style.css
+ | Style Name: Twenty Twenty-Two
+ | Style URI: https://wordpress.org/themes/twentytwentytwo/
+ | Description: Built on a solidly designed foundation, Twenty Twenty-Two embraces the idea that everyone deserves a...
+ | Author: the WordPress team
+ | Author URI: https://wordpress.org/
+ |
+ | Found By: Known Locations (Aggressive Detection)
+ |  - http://www.honeypot.com/wordpress/wp-content/themes/twentytwentytwo/, status: 200
+ |
+ | Version: 1.7 (80% confidence)
+ | Found By: Style (Passive Detection)
+ |  - http://www.honeypot.com/wordpress/wp-content/themes/twentytwentytwo/style.css, Match: 'Version: 1.7'
+
+
+[i] No Config Backups Found.
+
+
+[i] No DB Exports Found.
+
+
+[i] User(s) Identified:
+
+[+] Admin
+ | Found By: Author Posts - Display Name (Passive Detection)
+ | Confirmed By:
+ |  Rss Generator (Passive Detection)
+ |  Login Error Messages (Aggressive Detection)
+
+[+] admin
+ | Found By: Author Id Brute Forcing - Author Pattern (Aggressive Detection)
+ | Confirmed By: Login Error Messages (Aggressive Detection)
+
+[+] WPScan DB API OK
+ | Plan: free
+ | Requests Done (during the scan): 4
+ | Requests Remaining: 17
+
+[+] Finished: Sun Dec 21 10:18:55 2025
+[+] Requests Done: 31324
+[+] Cached Requests: 18
+[+] Data Sent: 9.951 MB
+[+] Data Received: 4.559 MB
+[+] Memory used: 307.223 MB
+[+] Elapsed time: 00:00:50
